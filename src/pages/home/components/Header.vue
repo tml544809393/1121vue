@@ -9,7 +9,7 @@
     输入景点
 </div>
 <div class="header-right">
-    前进
+    {{this.city}}
     <span class="iconfont icon">&#xe64a;</span>
     
     </div>
@@ -17,7 +17,10 @@
 </template>
 <script>
 export default {
-        name:"Header"
+        name:"Header",
+        props: {
+            city:String  
+        }
     }
 </script>
 <style lang="stylus" spoped> 
