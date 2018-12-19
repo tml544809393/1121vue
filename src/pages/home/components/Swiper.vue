@@ -1,12 +1,10 @@
 <template>
 <div class="wrapper">
      <swiper :options="swiperOption">
-        <swiper-slide>
-            <img class="swiper-img" src="http://img1.qunarzz.com/piao/fusion/1810/6e/4a5551bbb189d902.jpg_750x200_25257467.jpg">
+        <swiper-slide v-for="item of swiperList" :key="item.id">
+            <img class="swiper-img" :src="item.img">
         </swiper-slide>
-        <swiper-slide>
-            <img class="swiper-img" src="http://img1.qunarzz.com/piao/fusion/1810/af/30ffcf34e9819f02.jpg_750x200_736b7236.jpg">
-        </swiper-slide>
+       
         <div class="swiper-pagination"  slot="pagination"></div>
         
     </swiper>
@@ -18,17 +16,28 @@ export default {
     data () {
         return {
             swiperOption:{
-                pagination:{
-                    el:'swiper-pagination'
-                } 
-                
+               pagination: '.swiper-pagination',
+               loop: true,
+            //    autoplay: true
+                   
+               
             },
-            swiperSlides: [1, 2, 3, 4, 5]
+           
+            swiperList: [
+                {
+                id: '0001',
+                img: 'http://img1.qunarzz.com/piao/fusion/1810/6e/4a5551bbb189d902.jpg_750x200_25257467.jpg'
+            },{
+                id: '0002',
+                img: 'http://img1.qunarzz.com/piao/fusion/1810/af/30ffcf34e9819f02.jpg_750x200_736b7236.jpg'
+            }
+            
+            ]
         }
     }
 }
 </script>
-<style>
+<style scoped>
 .wrapper{
     /* width:100%;
     height:0;
@@ -38,5 +47,8 @@ export default {
 }
 .swiper-img{
     width:100%;
+}
+.wrapper >>> .swiper-pagination-bullet-active{
+    background:#fff !important;
 }
 </style>

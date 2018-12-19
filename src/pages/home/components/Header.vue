@@ -1,4 +1,5 @@
 <template>
+<div>
 <div class="header">
 <div class="header-left">
     <span class="iconfont">&#xe624;</span>
@@ -9,10 +10,14 @@
     输入景点
 </div>
 <div class="header-right">
-    {{this.city}}
+    <!-- {{this.city}} -->
+    城市
     <span class="iconfont icon">&#xe64a;</span>
     
     </div>
+    
+</div>
+
 </div>
 </template>
 <script>
@@ -47,4 +52,17 @@ export default {
             float:right
             width:1.24rem
             text-align:center
+    .serch
+        background:red;
+        height:.5rem;
+        padding:0 .1rem;
+        .serch-input
+            box-sizing:border-box;
+            width:100%;
+            border-radius:.06rem;
+            padding:0 .1rem;
+            height:.5rem;
+            line-height .5rem;
+            text-align:center;
+
 </style>
